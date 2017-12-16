@@ -4,7 +4,7 @@ export class PopupOptions {
   height?: number;
   width?: number;
   unit?: 'dp' | 'px' | '%' = 'dp';
-  backgroundColor?: string;
+  backgroundColor?: string = '#fff';
   hideArrow?: boolean = false;
   elevation?: number;
 }

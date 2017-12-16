@@ -93,12 +93,8 @@ export class Popup extends Common {
             break;
         }
         if (this._options && this._options.backgroundColor) {
-          view.android.setBackgroundColor(
-            new Color(this._options.backgroundColor).android
-          );
-        } else {
           this._popup.setBackgroundDrawable(
-            new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+            new android.graphics.drawable.ColorDrawable(new Color(this._options.backgroundColor).android));
         }
         if (parseInt(device.sdkVersion, 10) >= 21) {
           if (this._options.elevation) {

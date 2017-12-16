@@ -9,7 +9,7 @@ export class HelloWorldModel extends Observable {
   }
 
   showPopup(source, view) {
-    this.popup = new Popup({ width: 70, height: 70, unit: '%', elevation: 10 });
+    this.popup = new Popup({ backgroundColor:"transparent", width: 70, height: 70, unit: '%', elevation: 10 });
     this.popup.showPopup(source, view).then(data => {
       console.log(data);
     });
