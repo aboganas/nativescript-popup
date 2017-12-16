@@ -96,6 +96,9 @@ export class Popup extends Common {
           view.android.setBackgroundColor(
             new Color(this._options.backgroundColor).android
           );
+        } else {
+          this._popup.setBackgroundDrawable(
+            new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
         }
         if (parseInt(device.sdkVersion, 10) >= 21) {
           if (this._options.elevation) {

@@ -17,22 +17,31 @@ export function pageLoaded(args: observable.EventData) {
 export function showPopup() {
   const stack: any = new StackLayout();
   stack.height = '100%';
+  stack.backgroundColor = 'white';
+  stack.borderWidth = '2';
+  stack.borderRadius = '15';
+  stack.borderColor = 'gray';
   const lbl: any = new Label();
   lbl.text = 'Osei';
   lbl.backgroundColor = 'red';
   lbl.height = 40;
+  lbl.margin= '20';
   stack.addChild(lbl);
   const lblOther: any = new Label();
   lblOther.text = 'Fortune';
+  lblOther.color = 'green';
   lblOther.backgroundColor = 'blue';
   lblOther.height = 40;
+  lblOther.margin= '20';
   stack.addChild(lblOther);
   const btn: any = new Button();
   btn.text = 'Push';
   btn.height = 40;
+  btn.margin= '20';
   stack.addChild(btn);
   const dismissBtn = new Button();
   dismissBtn.text = 'Hide';
+  dismissBtn.margin= '20';
   dismissBtn.on('tap', args => {
     page.bindingContext.hidePopup();
   });
