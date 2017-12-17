@@ -6,6 +6,7 @@ import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout';
 import { ScrollView } from 'tns-core-modules/ui/scroll-view';
 import { ListView, ItemEventData } from 'tns-core-modules/ui/list-view';
 import { Button } from 'tns-core-modules/ui/button';
+import * as builder from 'tns-core-modules/ui/builder';
 let page;
 // Event handler for Page 'loaded' event attached in main-page.xml
 export function pageLoaded(args: observable.EventData) {
@@ -19,7 +20,7 @@ export function showPopup() {
   stack.height = '100%';
   stack.backgroundColor = 'white';
   stack.borderWidth = '2';
-  stack.borderRadius = '15';
+  stack.borderRadius = '40';
   stack.borderColor = 'gray';
   const lbl: any = new Label();
   lbl.text = 'Osei';
@@ -67,4 +68,18 @@ export function showPopupList() {
     );
   });
   page.bindingContext.showPopup(page.getViewById('btnList'), list);
+}
+
+export function showPopupComponent() {
+
+  const popover = builder.load({
+    path: "./",
+    name: "customPopup",
+    page: page,
+    attributes: {
+        bindingContext: { message: "This is a popup window test", 
+        onBtnTap: function(){ page.bindingContext.hidePopup() } }
+    }
+  });
+  page.bindingContext.showPopup(page.getViewById('btnComponent'), popover);
 }

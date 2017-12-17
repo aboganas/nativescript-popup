@@ -1,0 +1,4 @@
+<StackLayout backgroundColor="gray" >
+    <Label text="{{ message }}" textWrap="true" class="message" />
+    <Button text="dismiss" tap="{{ onBtnTap }}" backgroundColor="blue" />
+</StackLayout>
